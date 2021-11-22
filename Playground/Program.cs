@@ -36,20 +36,18 @@ var strings = new[] { "zero", "one", "two", "three",
 // polozkach pole strings (kombinovane - v celem poli)
 
 // agregace - https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.aggregate?view=net-6.0
-//var res = strings.Aggregate(
-//   "", // start with empty string to handle empty list case.
-//   (current, next) => current + next);
-//Console.WriteLine(res);
+var res = strings.Aggregate(
+   "", // start with empty string to handle empty list case.
+   (agg, item) => agg + item);
+Console.WriteLine(res);
 
 var aggregated = string.Join("", strings); //spojim slova do jednoho retece
 var result = aggregated // pracuji se stringem jako s kolekci znaku
     .GroupBy(x => x) // seskupuji podle pismenek (char v koleci string)
-    .Select(g => (g.Key, g.Count())) // udelam tuple obsahujici klic (pismenko) a pocet prvku
-    .OrderBy(x => x.Key)
-    .ThenByDescending(x => x.Item2)
+    .Select(g => (Letter: g.Key,Count: g.Count())) // udelam tuple obsahujici klic (pismenko) a pocet prvku
+    .OrderBy(x => x.Count)
+    .ThenByDescending(x => x.Letter)
     ; 
-
-
 
 
 
