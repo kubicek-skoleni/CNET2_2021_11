@@ -8,9 +8,11 @@ var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "sev
 var result = strings.Select(x => x.ToUpper());
 
 // 2 numbers - zjiste pomoci LINQu jestli pole obsahuje pouze suda cisla
+bool isOnlyEvenNumbers = numbers.All(x => x % 2 == 0);
 
+global::System.Console.WriteLine($"jsou vsechna cisla suda: {isOnlyEvenNumbers}");
 
-PrintList(result.ToList());
+//PrintList(result.ToList());
 
 
 
