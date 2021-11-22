@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Pl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextTools", "TextTools\TextTools.csproj", "{C579A22C-5865-44AC-AEE4-8CD5607CF007}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTextGUI", "WPFTextGUI\WPFTextGUI.csproj", "{6CE11E96-6A8A-4E0F-8AF9-0FD72E9D651A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C579A22C-5865-44AC-AEE4-8CD5607CF007}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C579A22C-5865-44AC-AEE4-8CD5607CF007}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C579A22C-5865-44AC-AEE4-8CD5607CF007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CE11E96-6A8A-4E0F-8AF9-0FD72E9D651A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE11E96-6A8A-4E0F-8AF9-0FD72E9D651A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE11E96-6A8A-4E0F-8AF9-0FD72E9D651A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE11E96-6A8A-4E0F-8AF9-0FD72E9D651A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
