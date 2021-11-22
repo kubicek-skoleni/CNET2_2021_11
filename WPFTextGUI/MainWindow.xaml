@@ -8,6 +8,23 @@
         Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-       <TextBlock x:Name="txbInfo" FontSize="20" />
+        <ScrollViewer Margin="0,0,0,0">
+        <StackPanel x:Name="stckWords" Orientation="Vertical">
+        </StackPanel>
+        </ScrollViewer>
+        <!--<ItemsControl x:Name="itemswords" ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Word}" />
+                        <TextBlock Text="{Binding Count}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>-->
+
+        <!--<ScrollViewer Margin="0,417,0,0">
+            <TextBlock x:Name="txbInfo" FontSize="20" Height="202" />
+        </ScrollViewer>-->
     </Grid>
 </Window>
