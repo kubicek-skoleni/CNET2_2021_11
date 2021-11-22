@@ -35,7 +35,11 @@ var strings = new[] { "zero", "one", "two", "three",
 // 6 - LINQ - frekvence vyskytu jednotlivych pismen ve vsech
 // polozkach pole strings (kombinovane - v celem poli)
 
-
+// agregace - https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.aggregate?view=net-6.0
+var res = strings.Aggregate(
+   "", // start with empty string to handle empty list case.
+   (current, next) => current + "" + next);
+Console.WriteLine(res);
 
 
 
