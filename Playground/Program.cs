@@ -14,7 +14,11 @@ var strings = new[] { "zero", "one", "two", "three",
 //global::System.Console.WriteLine($"jsou vsechna cisla suda: {isOnlyEvenNumbers}");
 
 // 3 - vypište čísla v poli numbers jako slova - LINQ
-var result = numbers.Select(x => strings[x]);
+ var result = numbers.Select(x => strings[x]);
+
+// 4 - zjistěte kolik obsahují všechna
+// slova v poli "strings" dohromady písmen
+
 
 
 PrintList(result.ToList());
