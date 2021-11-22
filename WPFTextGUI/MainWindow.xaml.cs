@@ -41,7 +41,7 @@ namespace WPFTextGUI
                 {
                     txbInfo.Text += $"{kv.Key}: {kv.Value} {Environment.NewLine}";
                 }
-                txbInfo.Text = Environment.NewLine;
+                txbInfo.Text += Environment.NewLine;
             }
         }
 
