@@ -44,7 +44,10 @@ var strings = new[] { "zero", "one", "two", "three",
 var aggregated = string.Join("", strings); //spojim slova do jednoho retece
 var result = aggregated // pracuji se stringem jako s kolekci znaku
     .GroupBy(x => x) // seskupuji podle pismenek (char v koleci string)
-    .Select(g => (g.Key, g.Count())); // udelam tuple obsahujici klic (pismenko) a pocet prvku
+    .Select(g => (g.Key, g.Count())) // udelam tuple obsahujici klic (pismenko) a pocet prvku
+    .OrderBy(x => x.Key)
+    .ThenByDescending(x => x.Item2)
+    ; 
 
 
 
