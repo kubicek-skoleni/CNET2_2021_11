@@ -8,7 +8,14 @@ var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "sev
 
 var result = strings.Select(x => x.ToUpper());
 
-foreach(var item in result)
+PrintList(result.ToList());
+
+
+
+static void PrintList(List<string> listToPrint)
 {
-    Console.WriteLine(item);
+    foreach (var item in listToPrint)
+    {
+        Console.WriteLine(item);
+    }
 }
