@@ -30,12 +30,18 @@ var strings = new[] { "zero", "one", "two", "three",
 //            .Select(x => $"upper:{x.UpperCase} lower:{x.LowerCase}");
 
 // - 5 pomoci tuplu
-var result = strings.Select(slovo => (slovo.ToLower(), slovo.ToUpper()));
+// var result = strings.Select(slovo => (slovo.ToLower(), slovo.ToUpper()));
+
+// 6 - LINQ - frekvence vyskytu jednotlivych pismen ve vsech
+// polozkach pole strings (kombinovane - v celem poli)
+
+
+
 
 
 //PrintList(result.ToList());
 
-PrintItems<(string, string)>(result);
+//PrintItems<(string, string)>(result);
 
 static void PrintList(List<string> listToPrint)
 {
