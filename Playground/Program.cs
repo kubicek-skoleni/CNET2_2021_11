@@ -4,9 +4,11 @@ var numbers = new[] { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
 
 var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
-// strings - pomocí LINQu vytvořte nové pole kde jsou všechna slova uppercase
-
+// 1 strings - pomocí LINQu vytvořte nové pole kde jsou všechna slova uppercase
 var result = strings.Select(x => x.ToUpper());
+
+// 2 numbers - zjiste pomoci LINQu jestli pole obsahuje pouze suda cisla
+
 
 PrintList(result.ToList());
 
