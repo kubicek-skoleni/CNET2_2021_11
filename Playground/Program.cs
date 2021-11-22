@@ -49,7 +49,8 @@ var strings = new[] { "zero", "one", "two", "three",
 //    .ThenByDescending(x => x.Letter)
 //    ; 
 
-// Dictionary
+// Dictionary - https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0
+
 
 
 var dict = CharFreq("abrakadabra");
