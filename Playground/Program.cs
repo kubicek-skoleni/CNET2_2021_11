@@ -51,9 +51,22 @@ var strings = new[] { "zero", "one", "two", "three",
 
 // Dictionary - https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0
 
+var bookdir = @"C:\Users\Student\source\repos\CNET2\Books";
+
+foreach(var file in GetFilesFromDir(bookdir))
+{
+    var dict = TextTools.FreqAnalysis(file);
+    var top10 = TextTools.GetTopWords(10, dict);
+
+    var fi = new FileInfo(file);
+    
+    Console.WriteLine("KNIHA: " + fi.Name);
+    PrintList(top10.Select(x => $"{x.Key} : {x.Value}").ToList());
+    Console.WriteLine();
+}
 
 
-var dict = CharFreq("abrakadabra");
+
 
 Console.WriteLine();
 
@@ -93,4 +106,9 @@ static Dictionary<char, int> CharFreq(string input)
     }
 
     return dict;
+}
+
+static IEnumerable<string> GetFilesFromDir(string dir)
+{
+    return Directory.EnumerateFiles(dir);
 }
