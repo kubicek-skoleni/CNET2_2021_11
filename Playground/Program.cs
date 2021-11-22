@@ -55,8 +55,8 @@ var bookdir = @"C:\Users\Student\source\repos\CNET2\Books";
 
 foreach(var file in GetFilesFromDir(bookdir))
 {
-    var dict = TextTools.FreqAnalysis(file);
-    var top10 = TextTools.GetTopWords(10, dict);
+    var dict = TextTools.TextTools.FreqAnalysis(file);
+    var top10 = TextTools.TextTools.GetTopWords(10, dict);
 
     var fi = new FileInfo(file);
     
