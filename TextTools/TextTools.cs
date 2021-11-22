@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Playground
+﻿namespace TextTools
 {
     public class TextTools
     {
@@ -20,9 +14,9 @@ namespace Playground
                 if (string.IsNullOrWhiteSpace(word))
                     continue;
 
-                if(dict.ContainsKey(word))
+                if (dict.ContainsKey(word))
                 {
-                    dict[word]++;
+                    dict[word] = dict[word] + 1;
                 }
                 else
                 {
@@ -38,7 +32,7 @@ namespace Playground
             return dict
                 .OrderByDescending(x => x.Value).Take(takeTop)
                 .ToDictionary(x => x.Key, y => y.Value);
-                ;
+            ;
         }
     }
 }
