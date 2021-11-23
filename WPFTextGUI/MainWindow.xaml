@@ -6,39 +6,44 @@
         xmlns:local="clr-namespace:WPFTextGUI"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow" Height="400" Width="500">
+        Title="Hello words" Height="400" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Name="btnLoad" 
-                Content="Read Async"
-                FontSize="16"
-                Height="32" Click="btnLoad_Click" Margin="10,5,205,23" 
+        <StackPanel Orientation="Vertical" Grid.ColumnSpan="2" Grid.Row="0">
+            <WrapPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal"  >
+                <Button Name="btnLoad" 
+                Content="By file read asyc"
+                FontSize="16" Margin="5"
+                Height="32" Click="btnLoad_Click" 
                 />
 
-        <Button Name="btnStatsAll" Content="Stats All" 
-                Grid.Row="0" FontSize="16" 
-                Height="32" Margin="100,5,113,23" Click="btnStatsAll_Click" 
+                <Button Name="btnStatsAll" Content="All seq" 
+                Grid.Row="0" FontSize="16"  Margin="5"
+                Height="32"  Click="btnStatsAll_Click" 
                 />
 
-        <Button Name="btnStatsAllParallel" Content="Stats All (P)"
-                Grid.Row="0" FontSize="16" Grid.ColumnSpan="2" 
-                Height="32" Width="100" Margin="100,5,113,23"
+                <Button Name="btnStatsAllParallel" Content="All parallel"
+                Grid.Row="0" FontSize="16" Grid.ColumnSpan="2"
+                Height="32" Width="100"  Margin="5"
                 Click="btnStatsAllParallel_Click"/>
 
-        <Button Name="btnStatsAllParallelLock" Content="Stats All (P-L)"
-                Grid.Row="0" FontSize="16" 
-                Height="32" Margin="297,5,99,23"
+                <Button Name="btnStatsAllParallelLock" Content="All lock"
+                Grid.Row="0" FontSize="16"  Margin="5"
+                Height="32"
                 Click="btnStatsAllParallelLock_Click" Grid.ColumnSpan="2"/>
 
-        <ProgressBar x:Name="progress1" Grid.ColumnSpan="2" Height="10" Margin="10,40,10,0" />
+            </WrapPanel>
+
+            <ProgressBar x:Name="progress1" Grid.ColumnSpan="2" Height="10" Margin="10,5,10,10" />
+        </StackPanel>
 
         <ScrollViewer Margin="0" Grid.Row="1" >
             <TextBlock x:Name="txbInfo" FontSize="20" />
