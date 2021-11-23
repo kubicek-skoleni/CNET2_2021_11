@@ -87,19 +87,32 @@ namespace WPFTextGUI
 
             stopwatch.Stop();
             txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
-
             Mouse.OverrideCursor = null;
         }
 
         private void btnStatsAll_Click(object sender, RoutedEventArgs e)
         {
+            Mouse.OverrideCursor = Cursors.Wait;
+            Stopwatch stopwatch = new();
+            stopwatch.Start();
+
             var files = GetBigFiles();
 
             var allwords = 
                 string.Join(Environment.NewLine, 
                 files.Select(f => File.ReadAllText(f)));
 
-            txbDebugInfo.Text = "ok";
+            var dict = TextTools.TextTools.FreqAnalysisFromString(allwords, Environment.NewLine);
+            var top10 = TextTools.TextTools.GetTopWords(10, dict);
+
+            foreach (var kv in top10)
+            {
+                txbInfo.Text += $"{kv.Key}: {kv.Value} {Environment.NewLine}";
+            }
+
+            stopwatch.Stop();
+            txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
+            Mouse.OverrideCursor = null;
         }
     }
 }
