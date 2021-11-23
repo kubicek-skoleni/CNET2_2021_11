@@ -13,5 +13,6 @@ namespace WPFTextGUI
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

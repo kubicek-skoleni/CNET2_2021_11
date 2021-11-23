@@ -2,10 +2,10 @@
 {
     public class TextTools
     {
-        public static Dictionary<string, int> FreqAnalysis(string file)
+        public static Dictionary<string, int> FreqAnalysis(string file, string splitby = " ")
         {
             var content = File.ReadAllText(file);
-            var words = content.Split(' ');
+            var words = content.Split(splitby);
 
             Dictionary<string, int> dict = new();
 

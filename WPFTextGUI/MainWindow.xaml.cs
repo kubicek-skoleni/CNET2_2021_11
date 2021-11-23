@@ -49,5 +49,27 @@ namespace WPFTextGUI
         {
             return Directory.EnumerateFiles(dir);
         }
+
+        private void btnLoad_Click(object sender, RoutedEventArgs e)
+        {
+            var bigfilesdir = @"C:\Users\Student\Documents\BigFiles";
+
+            var files = Directory.EnumerateFiles(bigfilesdir);
+
+            foreach(var file in files)
+            {
+                var wordsstats = TextTools.TextTools.FreqAnalysis(file, Environment.NewLine);
+                var top10 = TextTools.TextTools.GetTopWords(10, wordsstats);
+
+                var fi = new FileInfo(file);
+                txbInfo.Text += fi.Name + Environment.NewLine;
+                foreach (var kv in top10)
+                {
+                    txbInfo.Text += $"{kv.Key}: {kv.Value} {Environment.NewLine}";
+                }
+                txbInfo.Text += Environment.NewLine;
+            }
+
+        }
     }
 }
