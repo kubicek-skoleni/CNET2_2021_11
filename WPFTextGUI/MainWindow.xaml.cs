@@ -28,6 +28,11 @@ namespace WPFTextGUI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
+        }
+
+        private void LoadBooks()
+        {
             var bookdir = @"C:\Users\Student\source\repos\CNET2\Books";
 
             foreach (var file in GetFilesFromDir(bookdir))
@@ -44,7 +49,6 @@ namespace WPFTextGUI
                 txbInfo.Text += Environment.NewLine;
             }
         }
-
         static IEnumerable<string> GetFilesFromDir(string dir)
         {
             return Directory.EnumerateFiles(dir);
@@ -54,7 +58,7 @@ namespace WPFTextGUI
         {
             var bigfilesdir = @"C:\Users\Student\Documents\BigFiles";
 
-            var files = Directory.EnumerateFiles(bigfilesdir);
+            var files = Directory.EnumerateFiles(bigfilesdir,"*.txt");
 
             foreach(var file in files)
             {
