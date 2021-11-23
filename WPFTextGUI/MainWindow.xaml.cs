@@ -59,7 +59,6 @@ namespace WPFTextGUI
             //}
         }
        
-
         private async void btnLoad_Click(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Wait;
@@ -99,6 +98,8 @@ namespace WPFTextGUI
             var allwords = 
                 string.Join(Environment.NewLine, 
                 files.Select(f => File.ReadAllText(f)));
+
+            txbDebugInfo.Text = "ok";
         }
     }
 }
