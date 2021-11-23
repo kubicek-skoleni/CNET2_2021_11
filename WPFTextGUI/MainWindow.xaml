@@ -20,13 +20,15 @@
         <Button Name="btnLoad" 
                 Content="Read Async"
                 FontSize="16"
-                Height="32" Click="btnLoad_Click" Margin="10,14,205,14" 
+                Height="32" Click="btnLoad_Click" Margin="10,5,205,23" 
                 />
 
         <Button Name="btnStatsAll" Content="Stats All" 
                 Grid.Row="0" FontSize="16" 
-                Height="32" Margin="100,14,113,14" Click="btnStatsAll_Click" 
+                Height="32" Margin="100,5,113,23" Click="btnStatsAll_Click" 
                 />
+
+        <ProgressBar x:Name="progress1" Grid.ColumnSpan="2" Height="10" Margin="10,40,10,0" />
 
         <ScrollViewer Margin="0" Grid.Row="1" >
             <TextBlock x:Name="txbInfo" FontSize="20" />

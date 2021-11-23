@@ -61,13 +61,13 @@ namespace WPFTextGUI
        
         private async void btnLoad_Click(object sender, RoutedEventArgs e)
         {
+            txbInfo.Text = txbDebugInfo.Text = "";
             Mouse.OverrideCursor = Cursors.Wait;
-
             Stopwatch stopwatch = new();
             stopwatch.Start();
 
             var files = GetBigFiles();
-
+            
             foreach(var file in files)
             {
                 var wordsstats = await TextTools.TextTools.FreqAnalysisFromFileAsync(file, Environment.NewLine);
@@ -82,7 +82,7 @@ namespace WPFTextGUI
                 txbInfo.Text += Environment.NewLine;
                 txbDebugInfo.Text += stopwatch.ElapsedMilliseconds + Environment.NewLine;
 
-                //progressBar1.Value += 10;
+                progress1.Value += 100.0 / files.Count() ;
             }
 
             stopwatch.Stop();
@@ -95,6 +95,7 @@ namespace WPFTextGUI
             Mouse.OverrideCursor = Cursors.Wait;
             Stopwatch stopwatch = new();
             stopwatch.Start();
+            txbInfo.Text = txbDebugInfo.Text = "";
 
             var files = GetBigFiles();
 
