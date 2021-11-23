@@ -32,13 +32,13 @@ namespace WPFTextGUI
             
         }
 
-        private void LoadBooks()
+        private async void LoadBooks()
         {
             var bookdir = @"C:\Users\Student\source\repos\CNET2\Books";
 
             foreach (var file in GetFilesFromDir(bookdir))
             {
-                var dict = TextTools.TextTools.FreqAnalysis(file);
+                var dict = await TextTools.TextTools.FreqAnalysis(file);
                 var top10 = TextTools.TextTools.GetTopWords(10, dict);
                 var fi = new FileInfo(file);
 
@@ -55,9 +55,11 @@ namespace WPFTextGUI
             return Directory.EnumerateFiles(dir);
         }
 
-        private void btnLoad_Click(object sender, RoutedEventArgs e)
+        private async void btnLoad_Click(object sender, RoutedEventArgs e)
         {
-            Stopwatch stopwatch = new Stopwatch();
+            Mouse.OverrideCursor = Cursors.Wait;
+
+            Stopwatch stopwatch = new();
             stopwatch.Start();
 
             var bigfilesdir = @"C:\Users\Student\Documents\BigFiles";
@@ -66,7 +68,7 @@ namespace WPFTextGUI
 
             foreach(var file in files)
             {
-                var wordsstats = TextTools.TextTools.FreqAnalysis(file, Environment.NewLine);
+                var wordsstats = await TextTools.TextTools.FreqAnalysis(file, Environment.NewLine);
                 var top10 = TextTools.TextTools.GetTopWords(10, wordsstats);
 
                 var fi = new FileInfo(file);
@@ -80,6 +82,8 @@ namespace WPFTextGUI
 
             stopwatch.Stop();
             txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
+
+            Mouse.OverrideCursor = null;
         }
     }
 }

@@ -51,19 +51,19 @@ var strings = new[] { "zero", "one", "two", "three",
 
 // Dictionary - https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0
 
-var bookdir = @"C:\Users\Student\source\repos\CNET2\Books";
+//var bookdir = @"C:\Users\Student\source\repos\CNET2\Books";
 
-foreach(var file in GetFilesFromDir(bookdir))
-{
-    var dict = TextTools.TextTools.FreqAnalysis(file);
-    var top10 = TextTools.TextTools.GetTopWords(10, dict);
+//foreach(var file in GetFilesFromDir(bookdir))
+//{
+//    var dict = TextTools.TextTools.FreqAnalysis(file);
+//    var top10 = TextTools.TextTools.GetTopWords(10, dict);
 
-    var fi = new FileInfo(file);
+//    var fi = new FileInfo(file);
     
-    Console.WriteLine("KNIHA: " + fi.Name);
-    PrintList(top10.Select(x => $"{x.Key} : {x.Value}").ToList());
-    Console.WriteLine();
-}
+//    Console.WriteLine("KNIHA: " + fi.Name);
+//    PrintList(top10.Select(x => $"{x.Key} : {x.Value}").ToList());
+//    Console.WriteLine();
+//}
 
 
 
