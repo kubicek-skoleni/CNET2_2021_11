@@ -28,6 +28,10 @@
                 Height="32" Margin="100,5,113,23" Click="btnStatsAll_Click" 
                 />
 
+        <Button Name="btnStatsAllParallel" Content="Stats All (P)"
+                Grid.Row="0" FontSize="16" Grid.ColumnSpan="2" 
+                Height="32" Width="100" Margin="100,5,113,23"/>
+
         <ProgressBar x:Name="progress1" Grid.ColumnSpan="2" Height="10" Margin="10,40,10,0" />
 
         <ScrollViewer Margin="0" Grid.Row="1" >
