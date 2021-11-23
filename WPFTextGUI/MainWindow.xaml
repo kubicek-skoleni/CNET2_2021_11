@@ -33,6 +33,11 @@
                 Height="32" Width="100" Margin="100,5,113,23"
                 Click="btnStatsAllParallel_Click"/>
 
+        <Button Name="btnStatsAllParallelLock" Content="Stats All (P-L)"
+                Grid.Row="0" FontSize="16" 
+                Height="32" Margin="297,5,99,23"
+                Click="btnStatsAllParallelLock_Click" Grid.ColumnSpan="2"/>
+
         <ProgressBar x:Name="progress1" Grid.ColumnSpan="2" Height="10" Margin="10,40,10,0" />
 
         <ScrollViewer Margin="0" Grid.Row="1" >
