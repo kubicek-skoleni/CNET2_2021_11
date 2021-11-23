@@ -8,16 +8,24 @@
         Loaded="Window_Loaded"
         Title="MainWindow" Height="400" Width="500">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Button Grid.ColumnSpan="2" Grid.Row="0" Name="btnLoad" Content="Load.." HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Center" Height="33" Click="btnLoad_Click"/>
 
         <ScrollViewer Margin="0" Grid.Row="1" >
             <TextBlock x:Name="txbInfo" FontSize="20" />
         </ScrollViewer>
 
-        <Button Grid.Row="0" Name="btnLoad" Content="Load.." HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Center" Height="33" Click="btnLoad_Click"/>
+        <ScrollViewer Margin="0" Grid.Row="1" Grid.Column="1" >
+            <TextBlock x:Name="txbDebugInfo" FontSize="20" />
+        </ScrollViewer>
+
     </Grid>
 </Window>

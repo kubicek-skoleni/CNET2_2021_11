@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -56,6 +57,9 @@ namespace WPFTextGUI
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             var bigfilesdir = @"C:\Users\Student\Documents\BigFiles";
 
             var files = Directory.EnumerateFiles(bigfilesdir,"*.txt");
@@ -74,6 +78,8 @@ namespace WPFTextGUI
                 txbInfo.Text += Environment.NewLine;
             }
 
+            stopwatch.Stop();
+            txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
         }
     }
 }
