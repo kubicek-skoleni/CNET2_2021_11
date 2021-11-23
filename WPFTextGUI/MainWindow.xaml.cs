@@ -115,5 +115,10 @@ namespace WPFTextGUI
             txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
             Mouse.OverrideCursor = null;
         }
+
+        private void btnStatsAllParallel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
