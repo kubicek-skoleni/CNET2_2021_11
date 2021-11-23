@@ -118,7 +118,31 @@ namespace WPFTextGUI
 
         private void btnStatsAllParallel_Click(object sender, RoutedEventArgs e)
         {
+            txbInfo.Text = txbDebugInfo.Text = "";
+            Mouse.OverrideCursor = Cursors.Wait;
+            Stopwatch stopwatch = new();
+            stopwatch.Start();
 
+            ConcurrentDictionary<string, int> dict = new();
+
+            var files = GetBigFiles();
+
+            Parallel.ForEach(files, file =>
+            {
+                foreach(var word in File.ReadAllLines(file))
+                {
+                    dict.AddOrUpdate(word, 1, (key, oldValue) => oldValue + 1);
+                }
+            });
+
+            foreach (var kv in dict.OrderByDescending(x => x.Value).Take(10))
+            {
+                txbInfo.Text += $"{kv.Key}: {kv.Value} {Environment.NewLine}";
+            }
+
+            stopwatch.Stop();
+            txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
+            Mouse.OverrideCursor = null;
         }
     }
 }
