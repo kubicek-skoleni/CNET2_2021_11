@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFTextGUI.Model;
 
 namespace WPFTextGUI
 {
@@ -82,7 +83,9 @@ namespace WPFTextGUI
                 txbInfo.Text += Environment.NewLine;
                 txbDebugInfo.Text += stopwatch.ElapsedMilliseconds + Environment.NewLine;
 
-                progress1.Value += 100.0 / files.Count() ;
+                Data.Data.Results.Add(new StatsResult() { Source = file, Top10Words = top10 });
+
+                progress1.Value += 100.0 / files.Count();
             }
 
             stopwatch.Stop();
