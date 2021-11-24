@@ -31,12 +31,7 @@ namespace WPFTextGUI.Webcheck
         {
             txtWebCheckInfo.Text = $"spouštím hledání textu {webcheck.Term} v {webcheck.Url}...";
 
-            IProgress<string> progress = new Progress<string>(message =>
-            {
-                txtWebCheckInfo.Text += message;
-            });
-
-            webcheck.Start(progress);
+            webcheck.Start();
         }
     }
 }

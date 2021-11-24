@@ -26,11 +26,11 @@ namespace WPFTextGUI.Webcheck
 
         private HttpClient httpClient = new HttpClient();
 
-        public void Start(IProgress<string> progress)
+        public void Start()
         {
-            Task.Run(() => Checking(progress));
+            Task.Run(() => Checking());
         }
-        private void Checking(IProgress<string> progress)
+        private void Checking()
         {
             if (!(Webs.WebsToCheck.ContainsKey(Url) && Webs.WebsToCheck[Url] == true))
                 return;
@@ -47,12 +47,12 @@ namespace WPFTextGUI.Webcheck
                     if (content.Contains(Term, StringComparison.OrdinalIgnoreCase) == true)
                         Found = true;
 
-                    progress.Report("xxx" + Environment.NewLine);
+                    
                 }
                 catch(Exception e) 
                 {
                     LastError = LastState = $"{DateTime.Now.ToString()} - ERROR - {e.Message}";
-                    progress.Report("error" + Environment.NewLine);
+                   
                 }
 
                 Task.Delay(500).Wait();
