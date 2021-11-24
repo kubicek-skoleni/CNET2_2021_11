@@ -9,6 +9,11 @@ namespace WPFTextGUI.Webcheck
 {
     public class WebCheck
     {
+        public WebCheck(string _url, string _term)
+        {
+            Url = _url;
+            Term = _term;
+        }
         public string Url { get; set; }
 
         public string Term { get; set; }
@@ -23,8 +28,18 @@ namespace WPFTextGUI.Webcheck
 
         public void Start()
         {
+            Task.Run(() => Checking());
+        }
+        private void Checking()
+        {
+            if (!(Webs.WebsToCheck.ContainsKey(Url) && Webs.WebsToCheck[Url] == true))
+                return;
+
             while(true)
             {
+                if (Webs.WebsToCheck[Url] == false)
+                    break;
+
                 try
                 {
                     string content = httpClient.GetStringAsync(Url).Result;
@@ -37,7 +52,7 @@ namespace WPFTextGUI.Webcheck
                     LastError = LastState = $"{DateTime.Now.ToString()} - ERROR - {e.Message}";
                 }
 
-
+                Task.Delay(5000).Wait();
             }
         }
     }
