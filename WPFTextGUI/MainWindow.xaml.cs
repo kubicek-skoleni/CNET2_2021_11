@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,6 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFTextGUI.Model;
 using WPFTextGUI.Views;
+using System.Net.Http.Json;
 
 namespace WPFTextGUI
 {
@@ -190,5 +192,33 @@ namespace WPFTextGUI
             StatsResultWindow rw = new StatsResultWindow();
             rw.Show();
         }
+
+        //private async void btnUpload_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var client = new HttpClient();
+
+        //    Stopwatch stopwatch = new();
+        //    stopwatch.Start();
+
+        //    var file1all = TextTools.TextTools.FreqAnalysisFromFile(@"holmes.txt");
+        //    var top10 = TextTools.TextTools.GetTopWords(10, file1all);
+
+        //    stopwatch.Stop();
+        //    txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
+
+        //    StatsResult sr = new StatsResult()
+        //    {
+        //        ElapsedMilliseconds = (int)stopwatch.ElapsedMilliseconds,
+        //        Top10Words = top10,
+        //        Name = "The Adventures of Sherlock Holmes, by Arthur Conan Doyle",
+        //        Source = "holmes.txt",
+        //        SubmitedBy = "Lukas Kubicek"
+        //    };
+
+        //    //var api = "http://localhost:5237";
+        //    var api = "http://demo.vakutech.cz";
+        //    var res = await client.PostAsJsonAsync<StatsResult>(api + "/stats", sr);
+
+        //}
     }
 }
