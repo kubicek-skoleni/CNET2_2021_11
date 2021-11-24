@@ -10,6 +10,13 @@ if (res.IsSuccessStatusCode)
     string content = await res.Content.ReadAsStringAsync();
 }
 
+// https://www.gutenberg.org/cache/epub/2036/pg2036.txt
+// https://www.gutenberg.org/files/16749/16749-0.txt
+// https://www.gutenberg.org/cache/epub/19694/pg19694.txt
+// stahnete texty z techto tri adres a paralelne provedte textovou analyzu
+// a vypiste vysledky - kazdou knihu samostatne
+
+
 
 
 Console.WriteLine("Program finished.");
