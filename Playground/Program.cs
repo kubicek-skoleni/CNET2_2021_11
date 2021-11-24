@@ -2,21 +2,6 @@
 
 Console.WriteLine("Hello, World!");
 
-var task1 = Task.Run(() => 
-        {
-            TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words01.txt", Environment.NewLine);
-            Console.WriteLine("Task 1 finished.");
-        });
-
-
-var task2 = Task.Run(() =>
-            {
-                TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words09.txt", Environment.NewLine);
-                Console.WriteLine("Task 2 finished.");
-            });
-
-
-await Task.WhenAny(task1, task2);
 
 
 Console.WriteLine("Program finished.");
@@ -24,7 +9,6 @@ Console.WriteLine();
 
 
 //PrintList(result.ToList());
-
 //PrintItems<(char, int)>(result);
 
 static void PrintList(List<string> listToPrint)
@@ -129,4 +113,24 @@ static void LINQ()
     //    PrintList(top10.Select(x => $"{x.Key} : {x.Value}").ToList());
     //    Console.WriteLine();
     //}
+}
+
+static void SimpleTasks()
+{
+    var task1 = Task.Run(() =>
+    {
+        TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words01.txt", Environment.NewLine);
+        Console.WriteLine("Task 1 finished.");
+    });
+
+
+    var task2 = Task.Run(() =>
+    {
+        TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words09.txt", Environment.NewLine);
+        Console.WriteLine("Task 2 finished.");
+    });
+
+
+    await Task.WhenAny(task1, task2);
+
 }
