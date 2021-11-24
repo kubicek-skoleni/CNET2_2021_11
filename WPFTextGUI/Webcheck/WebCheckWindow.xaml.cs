@@ -26,5 +26,12 @@ namespace WPFTextGUI.Webcheck
 
             webcheck = _web;
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            txtWebCheckInfo.Text = $"spouštím hledání textu {webcheck.Term} v {webcheck.Url}...";
+
+            webcheck.Start();
+        }
     }
 }
