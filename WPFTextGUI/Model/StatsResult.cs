@@ -17,6 +17,11 @@ namespace WPFTextGUI.Model
         public string Source { get; set; }
 
         /// <summary>
+        /// how long was the analysis running
+        /// </summary>
+        public int ElapsedMilliseconds { get; set; }
+
+        /// <summary>
         /// 10 most commonn words in source
         /// </summary>
         public Dictionary<string,int> Top10Words { get; set; }

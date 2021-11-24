@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFTextGUI.Model;
+using WPFTextGUI.Views;
 
 namespace WPFTextGUI
 {
@@ -182,6 +183,12 @@ namespace WPFTextGUI
             stopwatch.Stop();
             txbDebugInfo.Text = "elapsed ms: " + stopwatch.ElapsedMilliseconds;
             Mouse.OverrideCursor = null;
+        }
+
+        private void btnShowAnalysisDetail_Click(object sender, RoutedEventArgs e)
+        {
+            StatsResultWindow rw = new StatsResultWindow();
+            rw.Show();
         }
     }
 }

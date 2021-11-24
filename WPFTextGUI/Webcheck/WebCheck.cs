@@ -18,7 +18,7 @@ namespace WPFTextGUI.Webcheck
 
         public string Term { get; set; }
 
-        public bool Found { get; set; }
+        volatile public bool Found;
 
         public string LastState { get; set; }
 
