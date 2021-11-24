@@ -2,7 +2,8 @@
 
 Console.WriteLine("Hello, World!");
 
-HttpClient httpClient = new HttpClient();
+using HttpClient httpClient = new();
+
 var res1 = await httpClient.GetAsync("https://www.gutenberg.org/cache/epub/2036/pg2036.txt");
 var res2 = await httpClient.GetAsync("https://www.gutenberg.org/files/16749/16749-0.txt");
 var res3 = await httpClient.GetAsync("https://www.gutenberg.org/cache/epub/19694/pg19694.txt");
@@ -30,6 +31,7 @@ if (res1.IsSuccessStatusCode && res2.IsSuccessStatusCode && res3.IsSuccessStatus
     );
 
     string content2 = await res2.Content.ReadAsStringAsync();
+
 
     var task2 = Task<Dictionary<string, int>>.Run(() =>
     {
@@ -89,9 +91,6 @@ if (res1.IsSuccessStatusCode && res2.IsSuccessStatusCode && res3.IsSuccessStatus
     Console.WriteLine("-------------------------------");
 
 }
-
-
-
 
 
 Console.WriteLine("Program finished.");
