@@ -2,6 +2,14 @@
 
 Console.WriteLine("Hello, World!");
 
+ HttpClient httpClient = new HttpClient();
+
+var res = await httpClient.GetAsync("https://google.com");
+if (res.IsSuccessStatusCode)
+{
+    string content = await res.Content.ReadAsStringAsync();
+}
+
 
 
 Console.WriteLine("Program finished.");
