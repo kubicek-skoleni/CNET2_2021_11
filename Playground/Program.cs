@@ -2,95 +2,8 @@
 
 Console.WriteLine("Hello, World!");
 
-using HttpClient httpClient = new();
-
-var res1 = await httpClient.GetAsync("https://www.gutenberg.org/cache/epub/2036/pg2036.txt");
-var res2 = await httpClient.GetAsync("https://www.gutenberg.org/files/16749/16749-0.txt");
-var res3 = await httpClient.GetAsync("https://www.gutenberg.org/cache/epub/19694/pg19694.txt");
-
-if (res1.IsSuccessStatusCode && res2.IsSuccessStatusCode && res3.IsSuccessStatusCode)
-{
-    string content1 = await res1.Content.ReadAsStringAsync();
-
-    var task1 = Task<Dictionary<string, int>>.Run(() =>
-    {
-        Dictionary<string, int> dictionary = new();
-        var dict = TextTools.TextTools.FreqAnalysisFromString(content1);
-        var top10 = TextTools.TextTools.GetTopWords(10, dict);
-
-        foreach (var kv in top10)
-        {
-            //Console.WriteLine($"{kv.Key}: {kv.Key} {Environment.NewLine}");
-            dictionary.Add(kv.Key, kv.Value);
-
-        }
-        Console.WriteLine("Task finished 1");
-
-        return dictionary;
-    }
-    );
-
-    string content2 = await res2.Content.ReadAsStringAsync();
 
 
-    var task2 = Task<Dictionary<string, int>>.Run(() =>
-    {
-        Dictionary<string, int> dictionary = new();
-        var dict = TextTools.TextTools.FreqAnalysisFromString(content2);
-        var top10 = TextTools.TextTools.GetTopWords(10, dict);
-
-        foreach (var kv in top10)
-        {
-            //Console.WriteLine($"{kv.Key}: {kv.Key} {Environment.NewLine}");
-            dictionary.Add(kv.Key, kv.Value);
-        }
-        Console.WriteLine("Task finished 2");
-
-        return dictionary;
-    }
-    );
-
-    string content3 = await res3.Content.ReadAsStringAsync();
-
-    var task3 = Task<Dictionary<string, int>>.Run(() =>
-    {
-        Dictionary<string, int> dictionary = new();
-        var dict = TextTools.TextTools.FreqAnalysisFromString(content3);
-        var top10 = TextTools.TextTools.GetTopWords(10, dict);
-
-        foreach (var kv in top10)
-        {
-            //Console.WriteLine($"{kv.Key}: {kv.Key} {Environment.NewLine}");
-            dictionary.Add(kv.Key, kv.Value);
-        }
-        Console.WriteLine("Task finished 3");
-
-        return dictionary;
-    }
-    );
-
-    Task.WaitAll(task1, task2, task3);
-
-    Console.WriteLine("Analýza 1");
-    foreach (var item in task1.Result)
-    {
-        Console.WriteLine($"{item.Key} - {item.Value}");
-    }
-    Console.WriteLine("-------------------------------");
-    Console.WriteLine("Analýza 2");
-    foreach (var item in task2.Result)
-    {
-        Console.WriteLine($"{item.Key} - {item.Value}");
-    }
-    Console.WriteLine("-------------------------------");
-    Console.WriteLine("Analýza 3");
-    foreach (var item in task3.Result)
-    {
-        Console.WriteLine($"{item.Key} - {item.Value}");
-    }
-    Console.WriteLine("-------------------------------");
-
-}
 
 
 Console.WriteLine("Program finished.");
@@ -206,20 +119,112 @@ static void LINQ()
 
 static void SimpleTasks()
 {
-    var task1 = Task.Run(() =>
-    {
-        TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words01.txt", Environment.NewLine);
-        Console.WriteLine("Task 1 finished.");
-    });
+    //var task1 = Task.Run(() =>
+    //{
+    //    TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words01.txt", Environment.NewLine);
+    //    Console.WriteLine("Task 1 finished.");
+    //});
 
 
-    var task2 = Task.Run(() =>
-    {
-        TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words09.txt", Environment.NewLine);
-        Console.WriteLine("Task 2 finished.");
-    });
+    //var task2 = Task.Run(() =>
+    //{
+    //    TextTools.TextTools.FreqAnalysisFromFile(@"C:\Users\Student\Documents\BigFiles\words09.txt", Environment.NewLine);
+    //    Console.WriteLine("Task 2 finished.");
+    //});
 
 
-    await Task.WhenAny(task1, task2);
+    //await Task.WhenAny(task1, task2);
 
 }
+
+static void Tasky3Knihy()
+{
+
+    //using HttpClient httpClient = new();
+
+    //var res1 = await httpClient.GetAsync("https://www.gutenberg.org/cache/epub/2036/pg2036.txt");
+    //var res2 = await httpClient.GetAsync("https://www.gutenberg.org/files/16749/16749-0.txt");
+    //var res3 = await httpClient.GetAsync("https://www.gutenberg.org/cache/epub/19694/pg19694.txt");
+
+    //if (res1.IsSuccessStatusCode && res2.IsSuccessStatusCode && res3.IsSuccessStatusCode)
+    //{
+    //    string content1 = await res1.Content.ReadAsStringAsync();
+
+    //    var task1 = Task<Dictionary<string, int>>.Run(() =>
+    //    {
+    //        Dictionary<string, int> dictionary = new();
+    //        var dict = TextTools.TextTools.FreqAnalysisFromString(content1);
+    //        var top10 = TextTools.TextTools.GetTopWords(10, dict);
+
+    //        foreach (var kv in top10)
+    //        {
+    //            //Console.WriteLine($"{kv.Key}: {kv.Key} {Environment.NewLine}");
+    //            dictionary.Add(kv.Key, kv.Value);
+
+    //        }
+    //        Console.WriteLine("Task finished 1");
+
+    //        return dictionary;
+    //    }
+    //    );
+
+    //    string content2 = await res2.Content.ReadAsStringAsync();
+
+
+    //    var task2 = Task<Dictionary<string, int>>.Run(() =>
+    //    {
+    //        Dictionary<string, int> dictionary = new();
+    //        var dict = TextTools.TextTools.FreqAnalysisFromString(content2);
+    //        var top10 = TextTools.TextTools.GetTopWords(10, dict);
+
+    //        foreach (var kv in top10)
+    //        {
+    //            //Console.WriteLine($"{kv.Key}: {kv.Key} {Environment.NewLine}");
+    //            dictionary.Add(kv.Key, kv.Value);
+    //        }
+    //        Console.WriteLine("Task finished 2");
+
+    //        return dictionary;
+    //    }
+    //    );
+
+    //    string content3 = await res3.Content.ReadAsStringAsync();
+
+    //    var task3 = Task<Dictionary<string, int>>.Run(() =>
+    //    {
+    //        Dictionary<string, int> dictionary = new();
+    //        var dict = TextTools.TextTools.FreqAnalysisFromString(content3);
+    //        var top10 = TextTools.TextTools.GetTopWords(10, dict);
+
+    //        foreach (var kv in top10)
+    //        {
+    //            //Console.WriteLine($"{kv.Key}: {kv.Key} {Environment.NewLine}");
+    //            dictionary.Add(kv.Key, kv.Value);
+    //        }
+    //        Console.WriteLine("Task finished 3");
+
+    //        return dictionary;
+    //    }
+    //    );
+
+    //    Task.WaitAll(task1, task2, task3);
+
+    //    Console.WriteLine("Analýza 1");
+    //    foreach (var item in task1.Result)
+    //    {
+    //        Console.WriteLine($"{item.Key} - {item.Value}");
+    //    }
+    //    Console.WriteLine("-------------------------------");
+    //    Console.WriteLine("Analýza 2");
+    //    foreach (var item in task2.Result)
+    //    {
+    //        Console.WriteLine($"{item.Key} - {item.Value}");
+    //    }
+    //    Console.WriteLine("-------------------------------");
+    //    Console.WriteLine("Analýza 3");
+    //    foreach (var item in task3.Result)
+    //    {
+    //        Console.WriteLine($"{item.Key} - {item.Value}");
+    //    }
+    //    Console.WriteLine("-------------------------------");
+    }
