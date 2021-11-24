@@ -21,22 +21,23 @@
             <WrapPanel Grid.ColumnSpan="2" Orientation="Horizontal"  >
                 <Button Name="btnLoad" 
                 Content="By file read asyc"
-                FontSize="16" Margin="5"
+                FontSize="16" Margin="5" Padding="5"
                 Height="32" Click="btnLoad_Click" 
                 />
 
                 <Button Name="btnStatsAll" Content="All seq" 
+                        Padding="5"
                 Grid.Row="0" FontSize="16"  Margin="5"
                 Height="32"  Click="btnStatsAll_Click" 
                 />
 
                 <Button Name="btnStatsAllParallel" Content="All parallel"
                 Grid.Row="0" FontSize="16" Grid.ColumnSpan="2"
-                Height="32" Width="100"  Margin="5"
+                Height="32" Width="100"  Margin="5" Padding="5"
                 Click="btnStatsAllParallel_Click"/>
 
                 <Button Name="btnStatsAllParallelLock" Content="All lock"
-                Grid.Row="0" FontSize="16"  Margin="5"
+                Grid.Row="0" FontSize="16"  Margin="5" Padding="5"
                 Height="32"
                 Click="btnStatsAllParallelLock_Click" Grid.ColumnSpan="2"/>
 
