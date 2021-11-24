@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Vertical" Grid.ColumnSpan="2" Grid.Row="0">
-            <WrapPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal"  >
+            <WrapPanel Grid.ColumnSpan="2" Orientation="Horizontal"  >
                 <Button Name="btnLoad" 
                 Content="By file read asyc"
                 FontSize="16" Margin="5"
