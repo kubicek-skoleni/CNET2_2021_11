@@ -9,10 +9,9 @@
     <Grid>
         <TextBox x:Name="txtUrl" FontSize="24" HorizontalAlignment="Left" Margin="30,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="416"/>
         <TextBox x:Name="txtTerm" FontSize="24" HorizontalAlignment="Left" Margin="30,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="416"/>
-        <Button x:Name="btnStart" FontSize="24" Width="100" Content="Start" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center"/>
-        <Button x:Name="btnStop" FontSize="24"  Width="100" Content="Stop" HorizontalAlignment="Left" Margin="175,0,0,0" VerticalAlignment="Center"/>
+        <Button Click="btnStart_Click" x:Name="btnStart" FontSize="24" Width="100" Content="Start" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center"/>
+        <Button Click="btnStop_Click" x:Name="btnStop" FontSize="24"  Width="100" Content="Stop" HorizontalAlignment="Left" Margin="175,0,0,0" VerticalAlignment="Center"/>
         <Label Content="Url" HorizontalAlignment="Left" FontSize="20" Margin="26,4,0,0" VerticalAlignment="Top"/>
         <Label Content="Search" FontSize="20" HorizontalAlignment="Left" Margin="28,83,0,0" VerticalAlignment="Top"/>
-
     </Grid>
 </Window>

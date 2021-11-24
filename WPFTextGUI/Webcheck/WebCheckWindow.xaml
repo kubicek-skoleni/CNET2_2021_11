@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTextGUI.Webcheck"
         mc:Ignorable="d"
-        Title="WebCheckWindow" Height="400" Width="400">
+        Title="WebCheckWindow" Height="300" Width="300">
     <Grid>
         <TextBox Name="txtWebCheckInfo" />
     </Grid>
