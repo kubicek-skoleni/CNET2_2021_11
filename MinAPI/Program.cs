@@ -29,9 +29,12 @@ app.MapGet("/hello", () => "hello");
 // GET -> /stats/5
 // GET -> /stats/all
 
-app.MapPost("/stats", (StatsResult result) =>
+app.MapPost("/stats", (StatsDb db, StatsResult result) =>
 {
-    return "ok";
+    db.StatsResults.Add(result);
+    db.SaveChanges();
+
+    return Results.Created($"/stats/{result.Id}", result);
 });
 
 
