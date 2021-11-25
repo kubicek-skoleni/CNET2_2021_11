@@ -1,3 +1,5 @@
+using WPFTextGUI.Model;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,28 +20,18 @@ app.UseHttpsRedirection();
 
 app.MapGet("/hello", () => "hello");
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// POST -> /stats
+// GET -> /stats/5
+// GET -> /stats/all
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/stats/{id}", (int id) =>
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-       new WeatherForecast
-       (
-           DateTime.Now.AddDays(index),
-           Random.Shared.Next(-20, 55),
-           summaries[Random.Shared.Next(summaries.Length)]
-       ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    StatsResult sr = new StatsResult();
+    sr.Id = id;
+    sr.Source = "dummy result";
+    return sr;
+});
+
 
 app.Run();
 
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
