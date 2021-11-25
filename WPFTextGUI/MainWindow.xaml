@@ -50,6 +50,9 @@
                 <Button Name="btnShowAnalysisDetail" Content="Analyze"
                         Grid.Row="0" FontSize="16"  Margin="5"
                         Height="32" Click="btnShowAnalysisDetail_Click"/>
+                <Button Name="btnReadAllFromAPI" Content="API All" 
+                        Grid.Row="0" FontSize="16"  Margin="5"
+                        Click="btnReadAllFromAPI_Click"/>
             </StackPanel>
         </StackPanel>
 
