@@ -1,0 +1,17 @@
+1. Jak spustíte normální metodu na pozadí
+
+2. Když nějaká metoda frameworku/knihovny má Async v názvu
+
+3. Jak zavolate asynchronni metodu synchronne (bez await)
+
+4. Co je to Task
+
+5. Možnosti jak vytvořit Task
+
+6. Jak počkáte až task skončí
+
+7. Jak synchronizujete více tasku
+
+8. Jaké jsou možnosti jak získát zpět výsldek nějaké operace na pozadí
+
+
