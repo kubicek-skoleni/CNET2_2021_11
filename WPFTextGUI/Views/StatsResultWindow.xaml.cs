@@ -19,9 +19,11 @@ namespace WPFTextGUI.Views
     /// </summary>
     public partial class StatsResultWindow : Window
     {
-        public StatsResultWindow()
+        public StatsResultWindow(Model.StatsResult result)
         {
             InitializeComponent();
+
+            DataContext = result;
         }
     }
 }

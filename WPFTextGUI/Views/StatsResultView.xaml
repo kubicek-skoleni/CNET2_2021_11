@@ -4,11 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFTextGUI.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
+             DataContext="{Binding}"
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Orientation="Vertical">
-        <TextBlock Text="Source" FontSize="24" HorizontalAlignment="Center" />
+        <TextBlock Text="Name" FontSize="24" HorizontalAlignment="Center" />
+        <TextBlock Text="{Binding Path=Source}" FontSize="24" HorizontalAlignment="Center" />
         <TextBlock Text="3500 ms" FontSize="20" HorizontalAlignment="Center" />
+        <TextBlock Text="SubmitedBy" FontSize="20" HorizontalAlignment="Center" />
         <DataGrid />
     </StackPanel>
 </UserControl>

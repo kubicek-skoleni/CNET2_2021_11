@@ -187,11 +187,28 @@ namespace WPFTextGUI
             Mouse.OverrideCursor = null;
         }
 
-        private void btnShowAnalysisDetail_Click(object sender, RoutedEventArgs e)
+        private async void btnShowAnalysisDetail_Click(object sender, RoutedEventArgs e)
         {
-            StatsResultWindow rw = new StatsResultWindow();
+            var url = "https://www.gutenberg.org/cache/epub/2036/pg2036.txt";
+
+            var dict = await TextTools.TextTools.FreqAnalysisFromUrlAsync(url);
+            var top10 = TextTools.TextTools.GetTopWords(10, dict);
+
+            StatsResult result = new StatsResult();
+            result.Top10Words = top10;
+            result.Source = url;
+
+            StatsResultWindow rw = new StatsResultWindow(result);
             rw.Show();
+
+
         }
+
+
+
+
+
+
 
         //private async void btnUpload_Click(object sender, RoutedEventArgs e)
         //{
