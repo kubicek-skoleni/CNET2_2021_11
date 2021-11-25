@@ -191,12 +191,18 @@ namespace WPFTextGUI
         {
             var url = "https://www.gutenberg.org/cache/epub/2036/pg2036.txt";
 
+            var d = DateTime.Now;
+
             var dict = await TextTools.TextTools.FreqAnalysisFromUrlAsync(url);
             var top10 = TextTools.TextTools.GetTopWords(10, dict);
+
+            var elapsed = (int)(DateTime.Now - d).TotalMilliseconds;
 
             StatsResult result = new StatsResult();
             result.Top10Words = top10;
             result.Source = url;
+            result.ElapsedMilliseconds = elapsed;
+            result.SubmitedBy = "Lukas Kubicek";
 
             StatsResultWindow rw = new StatsResultWindow(result);
             rw.Show();

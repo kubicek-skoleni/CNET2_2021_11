@@ -25,5 +25,10 @@ namespace WPFTextGUI.Views
 
             DataContext = result;
         }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

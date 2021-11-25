@@ -8,10 +8,11 @@
              DataContext="{Binding}"
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Orientation="Vertical">
-        <TextBlock Text="Name" FontSize="24" HorizontalAlignment="Center" />
-        <TextBlock Text="{Binding Path=Source}" FontSize="24" HorizontalAlignment="Center" />
-        <TextBlock Text="3500 ms" FontSize="20" HorizontalAlignment="Center" />
-        <TextBlock Text="SubmitedBy" FontSize="20" HorizontalAlignment="Center" />
-        <DataGrid />
+        <Label>Jméno (knihy):</Label>
+        <TextBox Text="{Binding Name}" FontSize="24" HorizontalAlignment="Stretch" />
+        <TextBlock Text="{Binding Path=Source}" FontSize="24" HorizontalAlignment="Stretch" />
+        <TextBlock Text="{Binding ElapsedMilliseconds}" FontSize="20" HorizontalAlignment="Stretch" />
+        <TextBlock Text="{Binding SubmitedBy}" FontSize="20" HorizontalAlignment="Stretch" />
+        <DataGrid ItemsSource="{Binding Top10Words}" />
     </StackPanel>
 </UserControl>
